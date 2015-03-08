@@ -4,9 +4,39 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AceScrum | Simple Agile Development</title>
+        <title>AceAPI | Jumpstart Your Django-Angular projects</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{% static 'board/vendor/normalize.css' %}">
-        <link rel="stylesheet" href="{% static 'board/css/board.css' %}">
+        <!-- Use this for production 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+        <!-- Use this for development -->
+        <link rel="stylesheet" href="{% static 'restapi/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'restapi/css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'restapi/css/custom.css' %}">
+    </head>
+<body>
+
+    <div class="container" id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <footer>
+        {% block footer %}
+        {% endblock footer %}
+        <script src="{% static 'restapi/js/vendor/jquery.js' %}"></script>
+    </footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
