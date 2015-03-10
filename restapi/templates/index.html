@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AceAPI | Jumpstart Your Django-Angular projects</title>
+        <title>{{ site_title }} | {{ site_tagline }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Use this for production 
@@ -16,10 +16,38 @@
     </head>
 <body ng-app="frontEndApp">
 
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">{{ site_title }}</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container" id="content" ng-controller="SampleCtrl as ctrl">
-    Hello
+    <div class="jumbotron">
+    <h3>Hello, and welcome to AceAPI</h3>
+    <p>This is a simple template for speeding the development of Django REST/Angular applications. Customize it to your heart's content.</p>
+    </div>
     {% verbatim %}
-    <p>{{testItems}}</p>    
+    <p>{{testItems[0]}}</p>    
     {% endverbatim %}
     
             {% block content %}

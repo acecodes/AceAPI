@@ -8,7 +8,7 @@
      * # AboutCtrl
      * Controller of the frontendApp
      */
-    angular.module('frontendApp')
+    angular.module('frontEndApp')
       .controller('SampleCtrl', function ($scope) {
         $scope.testItems = [
           'A is for Antelope',
@@ -16,4 +16,4 @@
           'C is for Cougar'
         ];
       });
-}());
+})();

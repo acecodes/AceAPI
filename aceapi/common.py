@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+SITE_TITLE = 'AceAPI'
+SITE_TAGLINE = 'Jumpstart your Django/Angular apps'
 
 # Application definition
 

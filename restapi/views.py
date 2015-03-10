@@ -1,11 +1,15 @@
 from rest_framework import viewsets
 from .serializers import AnimalSerializer, PersonSerializer
 from .models import Animal, Person
-from django.shortcuts import render
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from aceapi.common import SITE_TAGLINE, SITE_TITLE
 
 
 def index(request):
-    return render(request, 'index.html')
+    context = RequestContext(request)
+    context_dict = {'site_title': SITE_TITLE, 'site_tagline': SITE_TAGLINE}
+    return render_to_response('index.html', context_dict, context)
 
 
 class PersonViewSet(viewsets.ModelViewSet):
