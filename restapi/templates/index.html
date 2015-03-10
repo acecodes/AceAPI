@@ -14,10 +14,15 @@
         <link rel="stylesheet" href="{% static 'restapi/css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'restapi/css/custom.css' %}">
     </head>
-<body>
+<body ng-app="frontEndApp">
 
-    <div class="container" id="content">
-        {% block content %}
+    <div class="container" id="content" ng-controller="SampleCtrl as ctrl">
+    Hello
+    {% verbatim %}
+    <p>{{testItems}}</p>    
+    {% endverbatim %}
+    
+            {% block content %}
         {% endblock content %}
     </div>
 
@@ -29,6 +34,7 @@
         <script src="{% static 'restapi/js/vendor/angular-resource.min.js' %}"></script>
         <script src="{% static 'restapi/js/app.js' %}"></script>
         <script src="{% static 'restapi/js/controllers/sample.js' %}"></script>
+        <script src="{% static 'restapi/js/vendor/angular-django-rest-resource.js' %}"></script>
     </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

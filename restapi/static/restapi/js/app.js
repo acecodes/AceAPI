@@ -9,5 +9,5 @@
      *
      * Main module of the application.
      */
-    angular.module('frontendApp', ['ngResource']);
+    angular.module('frontendApp', ['ngResource', 'djangoRESTResources']);
 })();
