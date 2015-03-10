@@ -7,11 +7,11 @@ class PersonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Person
-        fields = ('name', 'birthday', 'employed',)
+        fields = ('id', 'name', 'birthday', 'employed',)
 
 
 class AnimalSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Animal
-        fields = ('name', 'mammal',)
+        fields = ('id', 'name', 'mammal',)

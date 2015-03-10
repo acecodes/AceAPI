@@ -43,11 +43,30 @@
 
     <div class="container" id="content" ng-controller="SampleCtrl as ctrl">
     <div class="jumbotron">
-    <h3>Hello, and welcome to AceAPI</h3>
-    <p>This is a simple template for speeding the development of Django REST/Angular applications. Customize it to your heart's content.</p>
+    <h3>Hello, and welcome to {{ site_title }}</h3>
+    <p>This is a simple template for speeding up the development of Django REST/Angular applications. It utilizes Django REST, Angular.js, Bootstrap and <a href="https://github.com/blacklocus/angular-django-rest-resource">angular-django-rest-resource</a>. Customize it to your heart's content.</p>
     </div>
     {% verbatim %}
-    <p>{{testItems[0]}}</p>    
+    <p><b>Pulled from Angular controller:</b></p>
+    <div ng-repeat="items in testItems">
+    <p>{{ items }}</p>
+    </div>
+    <br />
+    <p><b>Pulled from REST backend:</b></p>
+    <h2>Animals</h2>
+    <div ng-repeat="animal in animals">
+    <hr>
+    <p>Animal name: {{ animal.name }}</p>
+    <p>Mammal?: {{ animal.mammal }}</p>
+    <hr>
+    </div>
+    <h2>People</h2>
+    <div ng-repeat="person in people">
+    <hr>
+    <p>Person name: {{ person.name }}</p>
+    <p>Employed?: {{ person.employed }}</p>
+    <hr>
+    </div>      
     {% endverbatim %}
     
             {% block content %}
@@ -72,7 +91,7 @@
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', '{{ site_analytics }}');
        ga('send', 'pageview');
     </script>
 
